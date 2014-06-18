@@ -1,0 +1,10 @@
+syntax: glob
+target/*
+*.jar
+*.exe
+*.class
+*.cache
+
+syntax: regexp
+^XILIX_BLT.*\.xml$
+^DailyTicket_mhtb_20140324.xls$
