@@ -4,3 +4,4 @@ project/target/*
 *.exe
 *.class
 *.cache
+workspace.xml

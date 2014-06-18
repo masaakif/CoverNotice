@@ -4,6 +4,7 @@ target/*
 *.exe
 *.class
 *.cache
+workspace.xml
 
 syntax: regexp
 ^XILIX_BLT.*\.xml$
