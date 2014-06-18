@@ -4,4 +4,4 @@ project/target/*
 *.exe
 *.class
 *.cache
-workspace.xml
+.idea/workspace.xml

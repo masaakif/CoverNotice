@@ -4,19 +4,32 @@
 
 package covernotice
 
+import java.awt.event.WindowEvent
+
 
 object Main extends App {
 	val n = new Notice
 	val s = if (args.length < 1) "SAMPLE STRING" else args(0)
 	n.setString(s)
 	n.show
+	n.click
 }
 
-import java.awt.{ Frame, Dimension, Color, Label, Font }
+import java.awt.{ Frame, Dimension, Color, Label, Font, Robot}
 import java.awt.event.{WindowAdapter, WindowEvent}
 
 object MyEvent extends WindowAdapter {
 	override def windowClosing(e: WindowEvent): Unit = e.getWindow.dispose()
+}
+
+trait MouseClicker {
+	import java.awt.Robot
+	import java.awt.event.InputEvent
+	def click = {
+		new Robot{
+			mousePress(InputEvent.BUTTON1_MASK)
+			mouseRelease(InputEvent.BUTTON1_MASK)}
+	}
 }
 
 trait EnvironmentGetter {
@@ -27,7 +40,7 @@ trait EnvironmentGetter {
 		((new Rectangle) /: bs){(res,b) => res.union(b)}
 	}
 }
-class Notice extends WindowAdapter with EnvironmentGetter {
+class Notice extends WindowAdapter with EnvironmentGetter with MouseClicker{
 	val (w, h) = (getDesktopSize.getWidth.toInt, getDesktopSize.getHeight.toInt)
 	private val frame = new Frame {
 		val d = new Dimension(w, h)
@@ -36,7 +49,9 @@ class Notice extends WindowAdapter with EnvironmentGetter {
 		addWindowListener(MyEvent)
 		setBackground(Color.YELLOW)
 	}
-	def show = frame.setVisible(true)
+	def show:Unit = {
+		frame.setVisible(true)
+	}
 
 	def setString(s:String):Unit = {
 		val l = new Label(s)
