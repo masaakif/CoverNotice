@@ -27,6 +27,7 @@ trait MouseClicker {
 	import java.awt.event.InputEvent
 	def click = {
 		new Robot{
+			mouseRelease(InputEvent.BUTTON1_MASK)
 			mousePress(InputEvent.BUTTON1_MASK)
 			mouseRelease(InputEvent.BUTTON1_MASK)}
 	}

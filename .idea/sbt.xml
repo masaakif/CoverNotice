@@ -12,6 +12,10 @@
           </set>
         </option>
       </SbtProjectSettings>
+      <SbtProjectSettings>
+        <option name="externalProjectPath" value="C:\D-Drive\Developments\idea_projects\CoverNotice" />
+        <option name="useAutoImport" value="true" />
+      </SbtProjectSettings>
     </option>
   </component>
 </project>
