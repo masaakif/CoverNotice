@@ -7,10 +7,11 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="C:\D-Drive\Developments\idea_projects\CoverNotice" />
-            <option value="C:\D-Drive\Developments\idea_projects\CoverNotice\project" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/project" />
           </set>
         </option>
+        <option name="sbtVersion" value="0.13.1" />
       </SbtProjectSettings>
       <SbtProjectSettings>
         <option name="externalProjectPath" value="C:\D-Drive\Developments\idea_projects\CoverNotice" />
@@ -19,4 +20,3 @@
     </option>
   </component>
 </project>
-

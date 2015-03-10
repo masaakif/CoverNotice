@@ -49,6 +49,8 @@ class Notice extends WindowAdapter with EnvironmentGetter with MouseClicker{
 		setAlwaysOnTop(true)
 		addWindowListener(MyEvent)
 		setBackground(Color.YELLOW)
+		setResizable(false)
+		setUndecorated(true)
 	}
 	def show:Unit = {
 		frame.setVisible(true)
